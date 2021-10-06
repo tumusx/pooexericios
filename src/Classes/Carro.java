@@ -10,7 +10,7 @@ public class Carro {
         this.velocidade = this.velocidade+10;
         return true;
     }
-    public boolean  freiar(double velocidade){
+    public boolean freiar(double velocidade){
         this.velocidade = this.velocidade-10;
         return true;
     }
