@@ -4,10 +4,10 @@ import Classes.Lampada;
 
 public class TesteLampada {
     public static void main(String[] args){
-        Lampada a = new Lampada(1);
-        Lampada b = new Lampada(0);
-        a.desligar(0);
-        a.imprimir();
+        Lampada ligado =  new Lampada(1);
+        Lampada desligado = new Lampada(0 );
+        ligado.mostrarEstado();
+        desligado.mostrarEstado();
     }
 
     }

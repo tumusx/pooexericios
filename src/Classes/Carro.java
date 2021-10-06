@@ -1,20 +1,22 @@
 package Classes;
 public class Carro {
-    double velocidade = 10.5;
+    double velocidade;
 
     public Carro(double velocidade){
         this.velocidade = velocidade;
     }
 
-    public double acelerar(double velocidade){
-        return velocidade + 10;
+    public boolean acelerar(double velocidade){
+        this.velocidade = this.velocidade+10;
+        return true;
     }
-    public double  freiar(double velocidade){
-        return velocidade-10;
+    public boolean  freiar(double velocidade){
+        this.velocidade = this.velocidade-10;
+        return true;
     }
 
-    public double mostrarVelocidade(double velocidade){
-        return velocidade;
+    public boolean mostrarVelocidade(double velocidade){
+        return freiar(getVelocidade());
     }
 
     public double getVelocidade() {
@@ -23,6 +25,9 @@ public class Carro {
 
     public void setVelocidade(double velocidade) {
         this.velocidade = velocidade;
+    }
+    public void imprimirVelocidade(){
+        System.out.println("velocidade " + this.getVelocidade());
     }
 
 }
