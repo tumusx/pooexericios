@@ -1,5 +1,7 @@
 package Classes;
 
+import java.util.Locale;
+
 public class Lampada {
     int recebe;
     public Lampada(int recebe){
@@ -25,12 +27,12 @@ public class Lampada {
 
         }
         else if (recebe == 0){
-            System.out.println("desligado");
+            System.out.println("desligado".toUpperCase(Locale.ROOT));
         }
         return true;
     }
     public void imprimir(){
-        System.out.println("numero" + getRecebe());
+        System.out.println("numero".toUpperCase(Locale.ROOT) + getRecebe());
 
     }
     public int getRecebe() {
