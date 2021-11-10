@@ -1,1 +1,1 @@
-Exericios de POO referente a criação de classes
+Exercicios de POO em decorrer do tempo para faculdade
