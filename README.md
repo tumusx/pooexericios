@@ -1,1 +1,4 @@
-Exercicios de POO em decorrer do tempo para faculdade
+Exercícios de Programação orientada a objetos, sendo atualizado toda semana respondendo listas de exercícios fornecidas por um professor.
+
+</div 
+
