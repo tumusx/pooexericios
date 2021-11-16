@@ -20,6 +20,7 @@ public class NotaFiscal {
     public boolean total_notaFiscal(float valor_total){
         this.item = new Item((int) valor_total);
         return true;
+
     }
 
     public float getValor_total() {
