@@ -1,7 +1,9 @@
 package Revisão.exe2;
 
+import com.sun.source.tree.ReturnTree;
+
 public class Livro {
-    private float codigo;
+    private int codigo;
     private String titulo;
 
     public Livro(int codigo, String titulo) {
@@ -37,17 +39,30 @@ public class Livro {
         }
          Livro other = (Livro) obj;
         if (codigo == Float.parseFloat(null)) {
-            if ((other.codigo))
+            if (other.codigo  != Float.parseFloat(null)) {
+                return false;
+            } else if(!codigo(other.codigo)) {
+                return false;
         }
-        return true;
-    }
-    @Override
-    public int hashCode() {
-       final int prime = 31;
-       int result = 1;
-        result = prime* result+ ((codigo == null)?0: codigo.hashCode());
-       result = prime* result+ ((titulo == null)?0: titulo.hashCode());
-       return result;
+            if (titulo == null) {
+            if(other.titulo != null) {
+                return false;
+            }
+            else if(!titulo.equals(other.titulo)) {
+                return false;
+            }
     }
 
+
+}
+        return true;
+    }
+
+    private boolean codigo(int codigo) {
+        return codigo == this.codigo;
+    }
+    @Override
+    public String toString() {
+        return "Livro{" + "codigo=" + codigo + ", titulo=" + titulo + '}';
+    }
 }

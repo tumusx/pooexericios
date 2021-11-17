@@ -1,5 +1,7 @@
 package Revisão.exe1.composição;
 
+import Revisão.exe1.Agregação.Produto;
+
 public class Item {
     private int quantidade;
 
@@ -15,4 +17,6 @@ public class Item {
                 "quantidade=" + quantidade +
                 '}';
     }
+
+
 }

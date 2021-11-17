@@ -1,8 +1,8 @@
 package Revisão.exe1.Agregação;
 
 public class Produto {
+    private  float valor;
     private int codigo;
-    private float valor;
     private String descricao;
 
     public Produto (int codigo, float valor, String descricao){
@@ -15,7 +15,7 @@ public class Produto {
         return codigo;
     }
 
-    public float getValor(){
+    public  float getValor(){
         return valor;
     }
 
