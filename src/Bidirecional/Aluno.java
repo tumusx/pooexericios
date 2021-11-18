@@ -53,6 +53,7 @@ public class Aluno<result, prime> {
     public boolean adicionaTurma(Turma turma){
         if (turma != null && !ListaTurmas.contains(turma)) {
             ListaTurmas.add(turma);
+            turma.adicionaAluno(this);
         return true;
         }
         return false;
@@ -60,6 +61,7 @@ public class Aluno<result, prime> {
     public boolean removerTurma(Turma turma){
         if (turma != null && ListaTurmas.contains(turma)) {
             ListaTurmas.remove(turma);
+            turma.removerAluno(this);
             return true;
         }
         return false;

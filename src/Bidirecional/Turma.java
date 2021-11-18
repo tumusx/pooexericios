@@ -6,6 +6,11 @@ import java.util.List;
 public class Turma {
     private String nome;
     private String codigo;
+
+    public List<Aluno> getListaAlunos() {
+        return ListaAlunos;
+    }
+
     private List<Aluno> ListaAlunos = new ArrayList<>();
 
     public Turma(String nome, String codigo){
@@ -50,6 +55,26 @@ public boolean equals(Object obj){
         return true;
     }
 
+    public boolean adicionaAluno(Aluno aluno){
+        if (aluno != null && !ListaAlunos.contains(aluno)) {
+            ListaAlunos.add(aluno);
+            //Aqui vai pegar o aluno e vai add o aluno na lista de alunos
+            aluno.adicionaTurma(this);
+            return true;
+        }
+        return false;
+    }
+    public boolean removerAluno(Aluno aluno){
+        if (aluno != null && ListaAlunos.contains(aluno)) {
+            ListaAlunos.remove(aluno);
+            //Aqui vai pegar o aluno e vai remover  o aluno na lista de alunos
+            aluno.removerTurma(this);
+        return true;
+        }
+        return false;
+    }
+
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -59,6 +84,6 @@ public boolean equals(Object obj){
         return result;
     }
     public String toString(){
-        return "Turma: " + nome + " - " + codigo;
+        return "Turma: " + nome + " - " + codigo + this.nome + this.getListaAlunos();
     }
 }
