@@ -10,6 +10,7 @@ public class Aluno {
     private String nome;
 
     private List<Orientador> listorientador = new ArrayList<>();
+
     public List<Orientador> getOrientador() {
         return listorientador;
     }
@@ -35,20 +36,22 @@ public class Aluno {
         this.nome = nome;
     }
     public boolean addOrientador(Orientador orientador) {
+        boolean retorno = false;
         if (orientador != null && !listorientador.contains(orientador)) {
             listorientador.add(orientador);
+            retorno = true;
             orientador.addAluno(this);
-            return true;
         }
-        return false;
+        return retorno;
     }
     public boolean removeOrientadorAluno(Orientador orientador){
-        if (orientador != null && listorientador.contains(orientador) && listorientador.size() > 2) {
+        boolean retorno = false;
+        if (orientador != null && listorientador.contains(orientador) && listorientador.size() > 3) {
             listorientador.remove(orientador);
+            retorno = true;
             orientador.removerAluno(this);
-            return true;
         }
-        return false;
+        return retorno;
     }
     @Override
     public int hashCode() {
@@ -58,7 +61,7 @@ public class Aluno {
         return result;
     }
     public String toString(){
-        return "Aluno: " + nome + " - Matricula: " + matricula + " : " ;
+        return "Aluno: " + nome + " - Matricula: " + matricula  + this.getOrientador();
     }
 }
 

@@ -8,7 +8,8 @@ import java.util.List;
 
 
 public class Orientador {
-    private String nome;
+    private String nomeOrientador;
+    private Aluno aluno;
     private List<Aluno> listaAlunos = new ArrayList<>();
 
     public List<Aluno> getListaAlunos() {
@@ -16,15 +17,15 @@ public class Orientador {
     }
 
     public Orientador(String nome) {
-        this.nome = nome;
+        this.nomeOrientador = nome;
     }
 
     public String getNome() {
-        return nome;
+        return nomeOrientador;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.nomeOrientador = nome;
     }
 
     @Override
@@ -36,30 +37,32 @@ public class Orientador {
         if (getClass() != obj.getClass())
             return false;
         Orientador other = (Orientador) obj;
-        if (nome == null) {
-            if (other.nome != null)
+        if (nomeOrientador == null) {
+            if (other.nomeOrientador != null)
                 return false;
-        } else if (!nome.equals(other.nome))
+        } else if (!nomeOrientador.equals(other.nomeOrientador))
             return false;
         return true;
     }
 
     public boolean addAluno(Aluno aluno) {
+        boolean retorno = false;
         if (aluno != null && !listaAlunos.contains(aluno)) {
             listaAlunos.add(aluno);
+            retorno = true;
             aluno.addOrientador(this);
-            return true;
         }
-        return false;
+        return retorno;
     }
 
     public boolean removerAluno(Aluno aluno) {
+        boolean retorno = false;
         if (aluno != null && listaAlunos.contains(aluno) && listaAlunos.size() > 3) {
             listaAlunos.remove(aluno);
+            retorno = true;
             aluno.removeOrientadorAluno(this);
-            return true;
         }
-        return false;
+        return retorno;
     }
 
 
@@ -68,15 +71,14 @@ public class Orientador {
     public int hashCode() {
         final  int prime = 31;
         int result = 1;
-        result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+        result = prime * result + ((nomeOrientador == null) ? 0 : nomeOrientador.hashCode());
         return result;
     }
 
     @Override
     public String toString() {
-        return "Orientador:" +
-                "nome='" + nome + '\''  +
-                ':';
+        return "Orientador: " +
+                "" + nomeOrientador +  "\'";
     }
 }
 

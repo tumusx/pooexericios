@@ -13,18 +13,13 @@ public class TesteMainOrientadorAluno {
     Aluno alu4 = new Aluno("2524130", "João Tancredo");
 
     oriC.addAluno(alu1);
-    alu1.removeOrientadorAluno(oriC);
-    oriC.addAluno(alu2);
-    alu2.removeOrientadorAluno(oriC);
-    alu2.removeOrientadorAluno(oriC);
-    oriC.addAluno(alu3);
-    alu3.removeOrientadorAluno(oriC);
+    oriC.removerAluno(alu1);
+    oriD.addAluno(alu2);
+
         System.out.println(oriC.toString());
         System.out.println(alu1.toString());
-        System.out.println(alu2.toString());
-        System.out.println(alu3.toString());
-        System.out.println(oriC.toString());
-            //nao ta fazendo a remocao
+        System.out.println(oriD.toString());
+
 
 }}
 

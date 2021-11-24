@@ -18,6 +18,9 @@ public class MainTesteClasses {
     t.removerAluno(a);
     t3.adicionaAluno(c);
     a.removerTurma(t3);
+    t.adicionaAluno(b);
+    t.removerAluno(b);
+
 
    /* System.out.println(t.toString());
     System.out.println(t2.toString());
@@ -26,6 +29,7 @@ public class MainTesteClasses {
 
        System.out.println(a);
         System.out.println(t);
+        System.out.println(b);
         System.out.println(t2);
         System.out.println(t3);
     }
