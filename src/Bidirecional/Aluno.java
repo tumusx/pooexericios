@@ -58,8 +58,8 @@ public class Aluno<result, prime> {
         }
         return false;
     }
-    public boolean removerTurma(Turma turma){
-        if (turma != null && ListaTurmas.contains(turma)) {
+    public boolean removerTurma(Turma turma){ 
+        if (turma != null && ListaTurmas.contains(turma) && getListaTurmas().size() > 0) {
             ListaTurmas.remove(turma);
             turma.removerAluno(this);
             return true;

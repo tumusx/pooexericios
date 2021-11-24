@@ -56,7 +56,7 @@ public boolean equals(Object obj){
     }
 
     public boolean adicionaAluno(Aluno aluno){
-        if (aluno != null && !ListaAlunos.contains(aluno)) {
+        if (aluno != null && !ListaAlunos.contains(aluno) ) {
             ListaAlunos.add(aluno);
             //Aqui vai pegar o aluno e vai add o aluno na lista de alunos
             aluno.adicionaTurma(this);
