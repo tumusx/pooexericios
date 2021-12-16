@@ -14,30 +14,36 @@ public class Orientador {
         this.nome = nome;
     }
 
-    public boolean adicionarAluno(Estudante estudante){
-        boolean sucesso = false;
-        if(estudante!= null && !listaEstudantes.contains(estudante)){
-            listaEstudantes.add(estudante);
-            sucesso = true;
-            if(!estudante.listaOrientador.contains(this)){
-                estudante.adicionarOrientador(this);
-            }
 
+    public boolean adicionarAluno(Estudante estudante, int quantidade)throws LimiteOrientadorExecption {
+        if (listaEstudantes.size() < quantidade) {
+
+        } else {
+            throw new LimiteOrientadorExecption("Limite de estudantes atingido");
         }
-        return sucesso;
-    }
+        {
+            boolean sucesso = false;
+            if (estudante != null && !listaEstudantes.contains(estudante) && listaEstudantes.size() <= 3) {
+                listaEstudantes.add(estudante);
+                sucesso = true;
+                if (!estudante.listaOrientador.contains(this)) {
+                    estudante.adicionarOrientador(this);
+                }
 
+            }
+            return sucesso;
+        }
+    }
     public boolean removerAluno(Estudante estudante){
         boolean sucesso = false;
-        if(listaEstudantes.isEmpty()  && listaEstudantes.contains(estudante)){
+        if(listaEstudantes.isEmpty()  && listaEstudantes.contains(estudante) ){
             listaEstudantes.remove(estudante);
             sucesso = true;
-            if(!estudante.listaOrientador.contains(this)){
                 estudante.removerOrientador(this);
             }
-        }
+
         return sucesso;
-        }
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -83,6 +89,9 @@ public class Orientador {
             System.out.println("---"+ oEstudante.toString());
         }
 
+    }
+
+    public void adicionarAluno(Estudante estudante) {
     }
 }
 

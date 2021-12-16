@@ -9,13 +9,22 @@ public class Estudante {
 
     private int matricula;
 
+
     public Estudante(int matricula){
         this.matricula= matricula;
     }
 
+    public void addEstudante(int quantidade) throws LimiteEstudantesExeption{
+        if(listaOrientador.size() < quantidade){
+
+        } else {
+            throw new LimiteEstudantesExeption("Limite de orientador atingido");
+        }
+    }
+
     public boolean adicionarOrientador(Orientador orientador){
             boolean sucesso = false;
-            if(orientador!= null && !listaOrientador.contains(orientador)){
+            if(orientador!= null && !listaOrientador.contains(orientador)&& listaOrientador.size()<=2){
                 listaOrientador.add(orientador);
                 sucesso = true;
                 if(!orientador.listaEstudantes.contains(this)){
@@ -28,12 +37,10 @@ public class Estudante {
 
     public boolean removerOrientador(Orientador orientador){
         boolean sucesso = false;
-        if(listaOrientador.isEmpty()  && listaOrientador.contains(orientador)){
+        if(listaOrientador.isEmpty()  && listaOrientador.contains(orientador) ){
             listaOrientador.remove(orientador);
             sucesso = true;
-            if(!orientador.listaEstudantes.contains(this)){
                 orientador.removerAluno(this);
-            }
         }
         return sucesso;
     }
@@ -74,4 +81,5 @@ public class Estudante {
                 ", matricula=" + matricula +
                 '}';
     }
+
 }

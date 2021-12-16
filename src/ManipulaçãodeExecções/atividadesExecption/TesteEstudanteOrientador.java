@@ -14,6 +14,6 @@ public class TesteEstudanteOrientador {
         o1.removerAluno(e1);
 
         o1.imprimirOrientadorEstudante();
-
+        o2.imprimirOrientadorEstudante();
     }
 }
